@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="es" ng-app="app">
 <head>
 	<title>JeansCo</title>
 	<meta charset="utf-8">
@@ -7,8 +8,19 @@
 	<link rel="stylesheet" type="text/css" href="src/css/styles.css">
 </head>
 <body>
-<h1>JIMENA</h1>
-	
+<h1>JEANS WEB</h1>
 
+
+	<main-menu></main-menu> 
+	
+	<!-- Aqui van las vistas -->
+	<div ng-view></div>
+	
+	<div class="footer"></div>
+	
+<script type="text/javascript" src="libs/angular/angular.min.js"></script>
+<script type="text/javascript" src="libs/angular/angular_resource.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular-route.js"></script>
+<script type="text/javascript" src="src/js/main.js"></script>
 </body>
 </html>
