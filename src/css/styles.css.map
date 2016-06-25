@@ -1,0 +1,1 @@
+{"version":3,"sources":["src/less/globals.less"],"names":[],"mappings":"AAAA;EACC,SAAA;EACA,UAAA;EACA,SAAA","sourcesContent":["* {\n\tborder: 0;\n\tpadding: 0;\n\tmargin: 0;\n}"]}
