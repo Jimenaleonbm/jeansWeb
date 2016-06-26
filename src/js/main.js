@@ -1,28 +1,26 @@
-//Configurar Enrutamiento
-var configApp = function($routeProvider){
-	$routeProvider
-	.when("/", {
-		templateUrl: "views/home.html",
-		controller: "indexController"
-	})
-	.when("/productos",{
-		templateUrl: "views/productos.html",
-		controller: "productsController"
-	})
-	.when("/nosotros",{
-		templateUrl: "views/nosotros.html",
-		controller: "aboutController"
-	})
-	.when("/contacto",{
-		templateUrl: "views/contacto.html",
-		controller: "contactController"
-	})
-}
+(function() {
+	var app = angular.module('app', ['ui.router']);
 
-var app = angular.module("app", ["ngRoute", "ngResource"]);
-	app.directive("mainMenu", function(){
-		return{
-			restrict: "E",
-			templateUrl: "views/main-menu.html"
-			};
+	app.config(function($stateProvider, $urlRouterProvider){
+
+		$urlRouterProvider.otherwise("/home");
+
+		$stateProvider
+		.state('home', {
+			url: '/home',
+			templateUrl: 'views/home.html'
+		})
+		.state('productos', {
+			url: '/productos',
+			templateUrl: 'views/productos.html'
+		})
+		.state('nosotros', {
+			url: '/nosotros',
+			templateUrl: 'views/nosotros.html'
+		})
+		.state('contacto', {
+			url: '/contacto',
+			templateUrl: 'views/contacto.html'
+		});
 	});
+})();
