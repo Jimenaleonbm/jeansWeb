@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/mybriyit/jeansWeb/issues"
   },
-  "homepage": "https://github.com/mybriyit/jeansWeb#readme"
+  "homepage": "https://github.com/mybriyit/jeansWeb#readme",
+  "dependencies": {
+    "angular-material": "^1.1.0-rc.5"
+  }
 }
