@@ -1,53 +1,16 @@
 <h2> NUESTRA COLECCION </h2>
-<div class="contain-products">
-	<div class="product">
-		<img src="src/images/producto1.jpg" alt="producto">
-		<div class="info-product">
-			<div class="title"> Producto 1</div>
-			<div class="price"> $ 30.000</div>
-			<div class="buttons"> <span> [ ver mas ]   [ carrito ] </span></div>
-		</div>
-	</div>
-	<div class="product">
-		<img src="src/images/producto2.jpg" alt="producto">
-		<div class="info-product">
-			<div class="title"> Producto 2</div>
-			<div class="price"> $ 30.000</div>
-			<div class="buttons"> <span> [ ver mas ]   [ carrito ] </span></div>
-		</div>
-	</div>
-	<div class="product">
-		<img src="src/images/producto3.jpg" alt="producto">
-		<div class="info-product">
-			<div class="title"> Producto 3</div>
-			<div class="price"> $ 30.000</div>
-			<div class="buttons"> <span> [ ver mas ]   [ carrito ] </span></div>
-		</div>
-	</div>
-	<div class="product">
-		<img src="src/images/producto4.jpg" alt="producto">
-		<div class="info-product">
-			<div class="title"> Producto 4</div>
-			<div class="price"> $ 30.000</div>
-			<div class="buttons"> <span> [ ver mas ]   [ carrito ] </span></div>
-		</div>
-	</div>
-	<div class="product">
-		<img src="src/images/producto5.jpg" alt="producto">
-		<div class="info-product">
-			<div class="title"> Producto 5</div>
-			<div class="price"> $ 30.000</div>
-			<div class="buttons"> <span> [ ver mas ]   [ carrito ] </span></div>
-		</div>
-	</div>
+<div class="contain-products" ng-controller="productController as productCtrl">
 
-	<div class="product">
-		<img src="src/images/producto6.jpg" alt="producto">
+	<div class="product" ng-repeat="data in productCtrl.datos">
+		<img ng-src="{{data.imagen}}" alt="producto">
 		<div class="info-product">
-			<div class="title"> Producto 6</div>
-			<div class="price"> $ 30.000</div>
+			<div class="title"> {{data.nombre}}</div>
+			<div class="price"> {{data.precio}}</div>
 			<div class="buttons"> <span> [ ver mas ]   [ carrito ] </span></div>
 		</div>
+		<div class="more-info">
+			<div class="description"> {{data.descripcion}}</div>
+			<div class="tallas"> {{data.tallas}}</div>
+		</div>
 	</div>
-
 </div>
