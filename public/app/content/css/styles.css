@@ -1,0 +1,230 @@
+@font-face {
+    font-family: bebas;
+    src: url(../fonts/BEBAS.ttf);
+}
+@font-face {
+    font-family: lato;
+    src: url(../fonts/Lato-Light.ttf);
+    font-weight: 100;
+}
+@font-face {
+    font-family: lato;
+    src: url(../fonts/Lato-Medium.ttf);
+    font-weight: 400;
+}
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+body,
+div.section {
+    background-color: #fff;
+}
+h2 {
+    font-family: bebas;
+    color: #3e3e3e;
+    font-size: 3em;
+    text-align: center;
+}
+footer {
+    position: relative;
+    top: -5px;
+    height: 100px;
+    clear: both;
+    background: #3e3e3e;
+    text-align: center;
+}
+footer img {
+    height: 80%;
+}
+#home {
+    height: 100%;
+    width: 100%;
+    background-image: url('../../content/images/slide1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    font-family: bebas;
+    font-size: 2em;
+}
+#home .infoSlide {
+    background-color: transparent;
+    position: absolute;
+    font-size: 2.5em;
+    top: 60%;
+    left: 73%;
+    transform: translate(-50%, -50%);
+    color: #22ccc7;
+    letter-spacing: 10px;
+}
+#home .infoSlide span {
+    display: block;
+    font-size: 1.3em;
+    line-height: 70px;
+}
+#home .infoSlide a {
+    text-decoration: none;
+    font-family: lato;
+    font-weight: 100;
+    color: #fff;
+    display: block;
+    background-color: #22ccc7;
+    font-size: .5em;
+    padding: 5px 15px;
+    letter-spacing: 0;
+}
+#home .infoSlide a:hover {
+    text-decoration: none;
+}
+#productos {
+    float: none;
+}
+#productos article {
+    width: 80%;
+    margin: 0 auto;
+}
+#productos article h2 {
+    padding: 40px 0;
+    letter-spacing: 3px;
+}
+#productos article .contain-products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#productos article .contain-products div.product {
+    margin: 20px 0;
+    font-family: lato;
+    width: 30%;
+    display: inline-block;
+    padding: 0 5px;
+    background: #fff;
+}
+#productos article .contain-products div.product img {
+    width: 100%;
+}
+#productos article .contain-products div.product .info-product {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    letter-spacing: 4px;
+    line-height: 23px;
+}
+#productos article .contain-products div.product .info-product .buttons {
+    color: #43bffb;
+    cursor: pointer;
+}
+#contacto {
+    background-color: #3e3e3e;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    z-index: -2;
+}
+#contacto article {
+    width: 90%;
+    margin: 0 auto;
+    padding: 60px 0 70px;
+    height: 100%;
+}
+#contacto .left {
+    width: 46%;
+    display: inline-block;
+    font-family: lato;
+    font-weight: 100;
+    padding: 0 25px;
+    margin-left: 15px;
+}
+#contacto .left h3 {
+    font-family: bebas;
+    font-size: 3em;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+#contacto .left p.info-add {
+    padding: 20px 30px;
+}
+#contacto .right {
+    width: 47%;
+    display: inline-block;
+    vertical-align: bottom;
+}
+#contacto .right form .form-left {
+    width: 45%;
+    display: inline-block;
+    margin-right: 15px;
+    float: left;
+}
+#contacto .right form .form-left input {
+    background-color: #3e3e3e;
+    display: block;
+    margin-bottom: 10px;
+    width: 91%;
+    height: 25px;
+    color: #b5b5b5;
+    padding: 0 10px;
+}
+#contacto .right form .form-right {
+    width: 45%;
+    display: inline-block;
+}
+#contacto .right form .form-right textarea {
+    width: 91%;
+    height: 96px;
+    background-color: #3e3e3e;
+    color: #b5b5b5;
+    padding: 0 10px;
+}
+#contacto .right form input[type="submit"] {
+    clear: both;
+    display: block;
+    background-color: #43bffb;
+    color: #fff;
+    font-family: bebas;
+    padding: 5px 50px;
+}
+#contacto .right .fondo-gris {
+    background-color: rgba(174, 174, 174, 0.18);
+    height: 308%;
+    z-index: -1;
+    position: absolute;
+    right: -12px;
+    top: -170px;
+    width: 60%;
+    transform: rotate(31deg);
+}
+#nosotros article {
+    width: 100%;
+}
+#nosotros article .left-nosotros {
+    width: 50%;
+    float: left;
+    position: relative;
+}
+#nosotros article .left-nosotros img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+#nosotros article .left-nosotros p {
+    font-size: 3em;
+    font-family: bebas;
+    color: #fff;
+    width: 67%;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 15%;
+}
+#nosotros article .left-nosotros p span {
+    display: block;
+}
+#nosotros article .mapa {
+    width: 50%;
+    float: right;
+}
+#nosotros article .mapa img {
+    width: 100%;
+}
+/*# sourceMappingURL=styles.css.map */

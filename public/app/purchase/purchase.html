@@ -1,0 +1,37 @@
+<div class="container">
+    <br>
+    <table class="table table-bordered track by id">
+        <tr>
+            <th></th>
+            <th>Tallas</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Total</th>
+        </tr>
+        <tr ng-repeat="product in vm.productsPurchase">
+            <td>
+                <img widtd="8%" height="15%" ng-src="{{product.image}}"><br>
+                {{product.name}}
+            </td>
+            <td>
+                {{product.tallas}}
+            </td>
+            <td>
+                <a ng-click="vm.removeProduct(product)" style="color:red"><i class="fa fa-minus-circle"></i></a>
+
+                &nbsp;{{product.quantity}}&nbsp;
+                <a ng-click="vm.addProduct(product)"><i class="fa fa-plus-circle"></i></a>
+            </td>
+            <td>
+                {{product.price | currency}}
+            </td>
+            <td>
+                {{product.price * product.quantity | currency}}
+            </td>
+        </tr>
+    </table>
+
+    <a class="btn btn-info" ng-link="['Home']">Seguir comprando</a>
+    <a class="btn btn-danger" ng-click="vm.deletePurchase()">Eliminar pedido</a>
+    <a class="btn btn-success" ng-link="['Checkout']">Finalizar pedido</a>
+</div>
