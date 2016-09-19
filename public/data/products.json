@@ -1,0 +1,128 @@
+[
+  {
+    "id":1,
+    "name": "producto 1",
+    "price": 30000,
+    "image": "app/content/images/producto1.jpg",
+    "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod",
+    "sizes": [
+      {
+        "quantity":0,
+        "size":6},
+      {
+        "quantity":0,
+        "size":8},
+      {
+        "quantity":1,
+        "size":10},
+      {
+        "quantity":0,
+        "size":12},
+      {
+        "quantity":0,
+        "size":14},
+      {
+        "quantity":0,
+        "size":16}
+    ],
+    "totalQuantity":0,
+    "totalPrice":0,
+    "quantity":1,
+    "inCart": false
+  },
+  {
+    "id":2,
+    "name": "producto 2",
+    "price": 30000,
+    "image": "app/content/images/producto2.jpg",
+    "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod",
+    "sizes": [
+      {"quantity":0,"size":6},
+      {"quantity":0,"size":8},
+      {"quantity":1,"size":10},
+      {"quantity":0,"size":12},
+      {"quantity":0,"size":14},
+      {"quantity":0,"size":16}
+    ],
+    "totalQuantity":0,
+    "totalPrice":0,
+    "quantity":1,
+    "inCart": false
+  },
+  {
+    "id":3,
+    "name": "producto 3",
+    "price": 30000,
+    "image": "app/content/images/producto3.jpg",
+    "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod",
+    "sizes": [
+      {"quantity":0,"size":6},
+      {"quantity":0,"size":8},
+      {"quantity":1,"size":10},
+      {"quantity":0,"size":12},
+      {"quantity":0,"size":14},
+      {"quantity":0,"size":16}
+    ],
+    "totalQuantity":0,
+    "totalPrice":0,
+    "quantity":1,
+    "inCart": false
+  },
+  {
+    "id":4,
+    "name": "producto 4",
+    "price": 30000,
+    "image": "app/content/images/producto4.jpg",
+    "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod",
+    "sizes": [
+      {"quantity":0,"size":6},
+      {"quantity":0,"size":8},
+      {"quantity":1,"size":10},
+      {"quantity":0,"size":12},
+      {"quantity":0,"size":14},
+      {"quantity":0,"size":16}
+    ],
+    "totalQuantity":0,
+    "totalPrice":0,
+    "quantity":1,
+    "inCart": false
+  },
+  {
+    "id":5,
+    "name": "producto 5",
+    "price": 30000,
+    "image": "app/content/images/producto5.jpg",
+    "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod",
+    "sizes": [
+      {"quantity":0,"size":6},
+      {"quantity":0,"size":8},
+      {"quantity":1,"size":10},
+      {"quantity":0,"size":12},
+      {"quantity":0,"size":14},
+      {"quantity":0,"size":16}
+    ],
+    "totalQuantity":0,
+    "totalPrice":0,
+    "quantity":1,
+    "inCart": false
+  },
+  {
+    "id":6,
+    "name": "producto 6",
+    "price": 30000,
+    "image": "app/content/images/producto6.jpg",
+    "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod",
+    "sizes": [
+      {"quantity":0,"size":6},
+      {"quantity":0,"size":8},
+      {"quantity":1,"size":10},
+      {"quantity":0,"size":12},
+      {"quantity":0,"size":14},
+      {"quantity":0,"size":16}
+    ],
+    "totalQuantity":0,
+    "totalPrice":0,
+    "quantity":1,
+    "inCart": false
+  }
+]

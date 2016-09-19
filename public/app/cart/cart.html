@@ -1,10 +1,11 @@
 <div class="alert-info panel-success affix pull-right " style="float: right; position: fixed" >
     <a href="#" ng-link="['Purchase']">
-    <div class="row">
-            <div class="col-sm-8">
+    <div style="width:auto">
+            <div >
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
             </div>
-            <div class="col-sm-6">{{vm.total | currency}}</div>
+            <div ng-repeat="product in vm.products">{{product.totalPrice | currency }}</div>
+            <span>Total {{ vm.totalPurchase(vm.products) | currency}}</span>
     </div>
     </a>
 </div>

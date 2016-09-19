@@ -1,48 +1,48 @@
 (function (app) {
 
-    app.factory("cartService", [function () {
+    app.factory("cartService", ["$firebaseObject","$firebaseArray",function ($firebaseObject,$firebaseArray) {
 
-        var total = 0;
-        var products = [];
+        const productsArrayName = "products";
+
+        var ref = firebase.database().ref().child(productsArrayName);
+        var refProductsInit = firebase.database().ref().child("productsInit");
+        var firebaseArray = $firebaseArray(ref);
+        var firebaseArrayProductsInit = $firebaseArray(refProductsInit);
 
         function saveProduct(product) {
-            if (localStorage.getItem("products")) {
-                products = JSON.parse(localStorage.getItem("products"));
+            if (localStorage.getItem(productsArrayName)) {
+                products = JSON.parse(localStorage.getItem(productsArrayName));
                 var index = products.findIndex(function (enList) {
                     return enList.id === product.id;
                 });
-                if (index < 0) {
-                    products.push(product);
-                } else {
-                    products[index].quantity += product.quantity;
+                if (index >= 0) {
+                    products[index] = product;
                 }
-                localStorage.setItem("products", JSON.stringify(products));
+                localStorage.setItem(productsArrayName, JSON.stringify(products));
             } else {
                 products.push(product);
-                localStorage.setItem("products", JSON.stringify(products));
+                localStorage.setItem(productsArrayName, JSON.stringify(products));
             }
         }
-
-        function saveTotal(product) {
-            if (localStorage.getItem("total")) {
-                total = parseInt(localStorage.getItem("total"));
-                total += (product.price * product.quantity);
-                localStorage.setItem("total", total);
-            } else {
-                total += (product.price * product.quantity);
-                localStorage.setItem("total", total);
-            }
-        }
+        
 
         function addProduct(product) {
-            saveTotal(product);
+            calculateTotal(product);
             saveProduct(product);
-            console.info(total);
+            firebaseArray.$add(product);
+        }
+
+        function calculateTotal(product) {
+            product.totalQuantity = 0;
+            for(var i in product.sizes){
+                product.totalQuantity += product.sizes[i].quantity;
+            }
+            product.totalPrice = product.totalQuantity * product.price;
         }
 
         function removeProduct(product) {
-            if (localStorage.getItem("products")) {
-                products = JSON.parse(localStorage.getItem("products"));
+            if (localStorage.getItem(productsArrayName)) {
+                products = JSON.parse(localStorage.getItem(productsArrayName));
                 var index = products.findIndex(function (enList) {
                     return enList.id === product.id;
                 });
@@ -59,26 +59,45 @@
             }
         }
 
-        function getTotal() {
-            return parseInt(localStorage.getItem("total"));
-        }
-
         function getProductsPurchase() {
-            return JSON.parse(localStorage.getItem("products"));
+            var products = JSON.parse(localStorage.getItem(productsArrayName));
+            var productsPurchase = [];
+            for(var i in products){
+                if(products[i].inCart){
+                    productsPurchase.push(products[i]);
+                }
+            }
+            return productsPurchase;
         }
 
         function deletePurchase() {
             localStorage.clear();
-            total = 0;
+        }
+        
+        function getProducts(getdata) {
+            var products =[];
+            if(localStorage.getItem(productsArrayName)){
+                products = JSON.parse(localStorage.getItem(productsArrayName));
+                getdata(products);
+            }else {
+                firebaseArrayProductsInit.$loaded().then(function (data) {
+                    products = data;
+                    localStorage.setItem(productsArrayName,JSON.stringify(products));
+                    getdata(data);
+                }).catch(function (error) {
+                   console.error(error);
+                });
+            }
         }
 
         return {
             addProduct: addProduct,
-            getTotal: getTotal,
             getProductsPurchase: getProductsPurchase,
             deletePurchase:deletePurchase,
-            removeProduct:removeProduct
-        }
+            removeProduct:removeProduct,
+            getProducts:getProducts
+        };
+
     }])
 
 }(angular.module("app")));

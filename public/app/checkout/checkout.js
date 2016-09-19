@@ -3,21 +3,14 @@
     app.component("checkoutComponent",{
         templateUrl:"app/checkout/checkout.html",
         controllerAs:"vm",
-        controller:["cartService","$scope",function (cartService,$scope) {
+        controller:["cartService","$scope","$http",function (cartService,$scope,$http) {
+            
             var vm = this;
-            vm.total = cartService.getTotal();
+            vm.products = cartService.getProductsPurchase();
 
-            $scope.$on("addProduct",function () {
-                vm.total = cartService.getTotal();
-            });
-
-            $scope.$on("deletePurchase",function () {
-                vm.total = 0;
-            });
-
-            $scope.$on("removeProduct",function () {
-                vm.total = cartService.getTotal();
-            });
+            vm.sendEmail = function () {
+         
+            }
         }]
     })
 

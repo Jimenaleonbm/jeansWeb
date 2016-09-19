@@ -1,4 +1,12 @@
 <div class="container">
+
+    <div class="panel panel-primary">
+        <ul class="list-unstyled panel-body" ng-repeat="product in vm.products">
+            <li> <img ng-src="{{product.image}}" width="8%" height="15%"> {{product.name}} -- {{product.quantity}}</li>
+        </ul>
+    </div>
+
+
     <form>
         <div class="form-group">
             <label for="exampleInputEmail1">Email</label>
@@ -24,6 +32,6 @@
             <label for="exampleInputFile">Direccion</label>
             <input type="text" id="direccion" class="form-control" placeholder="Direccion">
         </div>
-        <button type="submit" class="btn btn-default">Enviar</button>
+        <button type="submit" class="btn btn-default" ng-click="vm.sendEmail()">Enviar</button>
     </form>
 </div>

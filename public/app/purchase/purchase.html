@@ -4,7 +4,6 @@
         <tr>
             <th></th>
             <th>Tallas</th>
-            <th>Cantidad</th>
             <th>Precio</th>
             <th>Total</th>
         </tr>
@@ -14,19 +13,27 @@
                 {{product.name}}
             </td>
             <td>
-                {{product.tallas}}
-            </td>
-            <td>
-                <a ng-click="vm.removeProduct(product)" style="color:red"><i class="fa fa-minus-circle"></i></a>
-
-                &nbsp;{{product.quantity}}&nbsp;
-                <a ng-click="vm.addProduct(product)"><i class="fa fa-plus-circle"></i></a>
+                <table class="table">
+                    <tr>
+                        <th ng-repeat="size in product.sizes">
+                            {{size.size}}
+                        </th>
+                    </tr>
+                    <tr>
+                        <td ng-repeat="size in product.sizes">
+                            <a ng-click="vm.removeQuantitySize(product,size)" style="color:red"><i class="fa fa-minus-circle"></i></a>
+                            &nbsp;
+                            {{size.quantity}}
+                            &nbsp;<a ng-click="vm.addQuantitySize(product,size)"><i class="fa fa-plus-circle"></i></a>
+                        </td>
+                    </tr>
+                </table>
             </td>
             <td>
                 {{product.price | currency}}
             </td>
             <td>
-                {{product.price * product.quantity | currency}}
+                {{product.totalPrice | currency}}
             </td>
         </tr>
     </table>
