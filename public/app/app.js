@@ -4,6 +4,13 @@
 
     app.value("$routerRootComponent", "app");
 
+    app.run(["$routerRootComponent","$rootScope","$location",function ($routerRootComponent,$rootScope,$location) {
+
+        console.log($routerRootComponent);
+        console.log($rootScope);
+        console.log($location)
+
+    }]);
     
     app.component("app",{
        templateUrl:"app/app.html",
@@ -14,7 +21,9 @@
         $routeConfig:[
             {path:"/home", name:"Home", component:"homeComponent",useAsDefault:true},
             {path:"/purchase", name:"Purchase",component:"purchaseComponent"},
-            {path:"/checkout",name:"Checkout",component:"checkoutComponent"}
+            {path:"/checkout",name:"Checkout",component:"checkoutComponent"},
+            {path:"/admin",name:"Admin",component:"adminComponent"},
+            {path:"/login",name:"Login",component:"loginComponent"}
         ]
     });
     
