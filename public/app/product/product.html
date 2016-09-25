@@ -1,14 +1,14 @@
 <h2> NUESTRA COLECCION </h2>
 <div class="contain-products">
     <div class="product" ng-repeat="product in vm.products | orderBy : 'id' track by product.id">
-        <img ng-src="{{product.image}}" alt="producto">{{product.id}}
+        <img ng-src="{{product.image}}" alt="producto">
         <div class="info-product">
             <div class="title"> {{product.name}}</div>
             <div class="price"> {{product.price | currency}}</div>
             <div class="buttons"> <span> [ ver mas ]</span><span>
-                <button class="btn btn-xs" ng-click="vm.addProduct(product)">
-                    <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                </button> </span></div>
+               [<button class="btn btn-xs" ng-click="vm.addProduct(product)">agregar <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                </button>]</span></div>
+                
         </div>
         <div class="more-info">
             <div class="tallas">

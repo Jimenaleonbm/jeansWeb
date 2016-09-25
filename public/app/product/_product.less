@@ -1,38 +1,49 @@
 #productos {
     float: none;
-}
-#productos article {
-    width: 80%;
-    margin: 0 auto;
-}
-#productos article h2 {
-    padding: 40px 0;
-    letter-spacing: 3px;
-}
-#productos article .contain-products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-#productos article .contain-products div.product {
-    margin: 20px 0;
-    font-family: lato;
-    width: 30%;
-    display: inline-block;
-    padding: 0 5px;
-    background: #fff;
-}
-#productos article .contain-products div.product img {
-    width: 100%;
-}
-#productos article .contain-products div.product .info-product {
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-    letter-spacing: 4px;
-    line-height: 23px;
-}
-#productos article .contain-products div.product .info-product .buttons {
-    color: #43bffb;
-    cursor: pointer;
+        article {
+        width: 80%;
+        margin: 0 auto;
+            h2 {
+            padding: 40px 0;
+            letter-spacing: 3px;
+        }
+        .contain-products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            div.product {
+                margin: 20px 0;
+                font-family: lato;
+                width: 30%;
+                display: inline-block;
+                padding: 0 5px;
+                background: #fff;
+                img {
+                    width: 100%;
+                }
+                .info-product {
+                    width: 100%;
+                    text-align: center;
+                    padding: 10px 0;
+                    letter-spacing: 4px;
+                    line-height: 23px;
+                }
+                .buttons {
+                    color: #43bffb;
+                    cursor: pointer;
+                    background-color: transparent !important;
+                    span button {
+                        letter-spacing: 4px;
+                        font-family: 'lato';
+                        background-color: transparent;
+                        font-size: 14px;
+                        margin-top: -3px;
+                        &:hover {
+                            color: @azul;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

@@ -1,11 +1,21 @@
 <div class="alert-info panel-success affix pull-right cart" style="float: right; position: fixed" >
-    <a href="#" ng-link="['Purchase']">
+    <!--<a href="#" ng-link="['Purchase']">-->
     <div style="width:auto">
-            <div >
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <div class="icon-cart" ng-click="is_active = !is_active" ng-init="is_active=false">
+                    <!--<i class="fa fa-shopping-cart" aria-hidden="true"></i>-->
+                    <img src="app/content/images/icon-car.svg" alt="carrito">
+                    <span> <i class="fa fa-arrow-circle-down" aria-hidden="true"></i></span>
             </div>
-            <div ng-repeat="product in vm.products">{{product.totalPrice | currency }}</div>
-            <span>Total {{ vm.totalPurchase(vm.products) | currency}}</span>
+            <div class="dropdown" ng-class="{active: is_active}">
+                    <div>
+                        <span><b>Total</b> {{ vm.totalPurchase(vm.products) | currency}}</span>
+                    </div>
+                <div ng-repeat="product in vm.products" class="item">
+                        <div>Nombre Producto</div>
+                        {{product.totalPrice | currency }}
+                </div>
+                <button><a href="#" ng-link="['Purchase']">CHECKOUT</a></button>
+            </div>
     </div>
-    </a>
+    <!--</a>-->
 </div>

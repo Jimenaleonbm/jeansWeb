@@ -277,9 +277,20 @@ footer img {
   letter-spacing: 4px;
   line-height: 23px;
 }
-#productos article .contain-products div.product .info-product .buttons {
+#productos article .contain-products div.product .buttons {
   color: #43bffb;
   cursor: pointer;
+  background-color: transparent !important;
+}
+#productos article .contain-products div.product .buttons span button {
+  letter-spacing: 4px;
+  font-family: 'lato';
+  background-color: transparent;
+  font-size: 14px;
+  margin-top: -3px;
+}
+#productos article .contain-products div.product .buttons span button:hover {
+  color: #43bffb;
 }
 #contacto {
   background-color: #3e3e3e;
@@ -362,6 +373,67 @@ footer img {
 }
 /*components*/
 .cart {
-  display: none !important;
+  z-index: 9999;
+  right: 0;
+  position: fixed;
+  background: transparent;
+  width: 100px;
+  margin-top: 15px;
+  margin-right: 0;
+  text-align: right;
+  font-family: "lato";
+  position: relative;
+}
+.cart .icon-cart {
+  margin-right: 15px;
+}
+.cart .icon-cart img {
+  max-width: 25px;
+}
+.cart .icon-cart span {
+  color: #22ccc7;
+}
+.cart .dropdown {
+  margin-top: 10px;
+  width: 250px;
+  float: right;
+  color: #fff;
+  background-color: rgba(31, 31, 31, 0.72);
+  padding: 15px;
+  text-align: left;
+  opacity: 0;
+  transition: 1s all;
+}
+.cart .dropdown > div:nth-child(1) {
+  text-align: center;
+  border: 1px solid #fff;
+  padding: 5px 0 10px;
+  margin-bottom: 8px;
+}
+.cart .dropdown > div:nth-child(1) span {
+  position: relative;
+  top: 2px;
+  margin-bottom: 1px dotted;
+  font-size: 16px;
+}
+.cart .dropdown > div:nth-child(1) span b {
+  margin-right: 10px;
+  text-transform: uppercase;
+}
+.cart .dropdown .item {
+  border-bottom: 1px dotted #fff;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+.cart .dropdown button {
+  background-color: #22ccc7;
+  width: 100%;
+  padding: 5px;
+}
+.cart .dropdown button a {
+  color: #fff;
+}
+.cart .dropdown.active {
+  opacity: 1;
 }
 /*# sourceMappingURL=app.css.map */
