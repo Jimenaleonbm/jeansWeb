@@ -11,7 +11,7 @@
                         <span><b>Total</b> {{ vm.totalPurchase(vm.products) | currency}}</span>
                     </div>
                 <div ng-repeat="product in vm.products" class="item">
-                        <div>Nombre Producto</div>
+                        <div>{{product.name}}</div>
                         {{product.totalPrice | currency }}
                 </div>
                 <button><a href="#" ng-link="['Purchase']">CHECKOUT</a></button>
