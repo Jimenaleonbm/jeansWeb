@@ -1,0 +1,439 @@
+/*commons*/
+@font-face {
+  font-family: bebas;
+  src: url(app/content/fonts/BebasNeue-Bold.ttf);
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: bebas;
+  src: url(app/content/fonts/BebasNeue-Book.ttf);
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: bebas;
+  src: url(app/content/fonts/BebasNeue-Regular.ttf);
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: bebas;
+  src: url(app/content/fonts/BebasNeue-Light.ttf);
+  font-style: normal;
+  font-weight: 200;
+}
+@font-face {
+  font-family: bebas;
+  src: url(app/content/fonts/BebasNeue-Thin.ttf);
+  font-style: normal;
+  font-weight: 100;
+}
+@font-face {
+  font-family: lato;
+  src: url(app/content/fonts/Lato-Light.ttf);
+  font-weight: 100;
+}
+@font-face {
+  font-family: lato;
+  src: url(app/content/fonts/Lato-Medium.ttf);
+  font-weight: 400;
+}
+/*colores*/
+* {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+body,
+div.section {
+  background-color: #fff;
+}
+h2 {
+  font-family: bebas;
+  color: #3e3e3e;
+  font-size: 3em;
+  text-align: center;
+}
+footer {
+  position: relative;
+  top: -5px;
+  height: 100px;
+  clear: both;
+  background: #3e3e3e;
+  text-align: center;
+}
+footer img {
+  height: 80%;
+}
+/*main menu*/
+.mainMenu {
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 15px;
+  z-index: 999;
+}
+.mainMenu button.openMenu {
+  padding: 15px;
+  background-color: transparent;
+  border: none;
+  vertical-align: middle;
+  transition: 1s linear;
+}
+.mainMenu button.openMenu:focus {
+  outline: none;
+}
+.mainMenu button.openMenu span {
+  position: relative;
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #000;
+}
+.mainMenu button.openMenu span:before {
+  content: "";
+  width: 25px;
+  height: 3px;
+  background: #000;
+  position: absolute;
+  top: -7px;
+  left: 0;
+}
+.mainMenu button.openMenu span:after {
+  content: "";
+  width: 25px;
+  height: 3px;
+  background: #000;
+  position: absolute;
+  top: 7px;
+  left: 0;
+}
+.mainMenu .menu {
+  opacity: 0;
+  transition: .5s linear;
+  vertical-align: middle;
+  font-family: 'bebas';
+  font-weight: 300;
+  display: inline-block;
+  margin: 0;
+  font-size: 18px;
+  text-align: center;
+  width: calc(100% - 65px);
+  position: absolute;
+  top: 8px;
+  left: 60px;
+}
+.mainMenu .menu li {
+  display: inline-block;
+  padding: 0 5%;
+}
+.mainMenu .menu li a {
+  text-decoration: none;
+  color: #000;
+  position: relative;
+  transition: all .5s linear;
+}
+.mainMenu .menu li a:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #43bffb;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  transition: ease .5s;
+  opacity: 0;
+}
+.mainMenu .menu li a:hover {
+  text-decoration: none;
+}
+.mainMenu .menu li a:hover:after {
+  width: 100%;
+  opacity: 1;
+}
+.mainMenu.active button.openMenu span {
+  background-color: transparent;
+}
+.mainMenu.active button.openMenu span:after {
+  top: 0;
+  transform: rotate(134deg);
+}
+.mainMenu.active button.openMenu span:before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.mainMenu.active .menu {
+  opacity: 1;
+}
+/*# sourceMappingURL=styles.css.map */
+/*sections*/
+#home {
+  height: 100%;
+  min-height: 650px;
+  width: 100%;
+  background-image: url('app/content/images/slide1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 50%;
+  position: relative;
+  font-family: bebas;
+  font-size: 2em;
+}
+#home .infoSlide {
+  background-color: transparent;
+  position: absolute;
+  font-size: 2.5em;
+  top: 60%;
+  left: 73%;
+  transform: translate(-50%, -50%);
+  color: #43bffb;
+  font-weight: 300;
+}
+#home .infoSlide span {
+  padding-right: 10px;
+  font-weight: 200;
+  line-height: 70px;
+}
+#home .infoSlide a {
+  text-decoration: none;
+  font-family: lato;
+  font-weight: 100;
+  color: #fff;
+  display: block;
+  background-color: #43bffb;
+  font-size: 25px;
+  padding: 0px 5px 5px;
+  /* letter-spacing: 0; */
+  text-align: center;
+}
+#home .infoSlide a:hover {
+  text-decoration: none;
+}
+#nosotros article {
+  width: 100%;
+}
+#nosotros article .left-nosotros {
+  width: 50%;
+  float: left;
+  position: relative;
+}
+#nosotros article .left-nosotros img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+#nosotros article .left-nosotros p {
+  font-size: 3em;
+  font-family: bebas;
+  color: #fff;
+  width: 67%;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 15%;
+}
+#nosotros article .left-nosotros p span {
+  display: block;
+}
+#nosotros article .mapa {
+  width: 50%;
+  float: right;
+}
+#nosotros article .mapa img {
+  width: 100%;
+}
+#productos {
+  float: none;
+}
+#productos article {
+  width: 80%;
+  margin: 0 auto;
+}
+#productos article h2 {
+  padding: 40px 0;
+  letter-spacing: 3px;
+}
+#productos article .contain-products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#productos article .contain-products div.product {
+  margin: 20px 0;
+  font-family: lato;
+  width: 30%;
+  display: inline-block;
+  padding: 0 5px;
+  background: #fff;
+}
+#productos article .contain-products div.product img {
+  width: 100%;
+}
+#productos article .contain-products div.product .info-product {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  letter-spacing: 4px;
+  line-height: 23px;
+}
+#productos article .contain-products div.product .buttons {
+  color: #43bffb;
+  cursor: pointer;
+  background-color: transparent !important;
+}
+#productos article .contain-products div.product .buttons span button {
+  letter-spacing: 4px;
+  font-family: 'lato';
+  background-color: transparent;
+  font-size: 14px;
+  margin-top: -3px;
+}
+#productos article .contain-products div.product .buttons span button:hover {
+  color: #43bffb;
+}
+#contacto {
+  background-color: #3e3e3e;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  z-index: -2;
+}
+#contacto article {
+  width: 90%;
+  margin: 0 auto;
+  padding: 60px 0 70px;
+  height: 100%;
+}
+#contacto .left {
+  width: 46%;
+  display: inline-block;
+  font-family: lato;
+  font-weight: 100;
+  padding: 0 25px;
+  margin-left: 15px;
+}
+#contacto .left h3 {
+  font-family: bebas;
+  font-size: 3em;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+#contacto .left p.info-add {
+  padding: 20px 30px;
+}
+#contacto .right {
+  width: 47%;
+  display: inline-block;
+  vertical-align: bottom;
+}
+#contacto .right form .form-left {
+  width: 45%;
+  display: inline-block;
+  margin-right: 15px;
+  float: left;
+}
+#contacto .right form .form-left input {
+  background-color: #3e3e3e;
+  display: block;
+  margin-bottom: 10px;
+  width: 91%;
+  height: 25px;
+  color: #b5b5b5;
+  padding: 0 10px;
+}
+#contacto .right form .form-right {
+  width: 45%;
+  display: inline-block;
+}
+#contacto .right form .form-right textarea {
+  width: 91%;
+  height: 96px;
+  background-color: #3e3e3e;
+  color: #b5b5b5;
+  padding: 0 10px;
+}
+#contacto .right form input[type="submit"] {
+  clear: both;
+  display: block;
+  background-color: #43bffb;
+  color: #fff;
+  font-family: bebas;
+  padding: 5px 50px;
+}
+#contacto .right .fondo-gris {
+  background-color: rgba(174, 174, 174, 0.18);
+  height: 308%;
+  z-index: -1;
+  position: absolute;
+  right: -12px;
+  top: -170px;
+  width: 60%;
+  transform: rotate(31deg);
+}
+/*components*/
+.cart {
+  z-index: 9999;
+  right: 0;
+  position: fixed;
+  background: transparent;
+  width: 100px;
+  margin-top: 15px;
+  margin-right: 0;
+  text-align: right;
+  font-family: "lato";
+  position: relative;
+}
+.cart .icon-cart {
+  margin-right: 15px;
+}
+.cart .icon-cart img {
+  max-width: 25px;
+}
+.cart .icon-cart span {
+  color: #22ccc7;
+}
+.cart .dropdown {
+  margin-top: 10px;
+  width: 250px;
+  float: right;
+  color: #fff;
+  background-color: rgba(31, 31, 31, 0.72);
+  padding: 15px;
+  text-align: left;
+  opacity: 0;
+  transition: 1s all;
+}
+.cart .dropdown > div:nth-child(1) {
+  text-align: center;
+  border: 1px solid #fff;
+  padding: 5px 0 10px;
+  margin-bottom: 8px;
+}
+.cart .dropdown > div:nth-child(1) span {
+  position: relative;
+  top: 2px;
+  margin-bottom: 1px dotted;
+  font-size: 16px;
+}
+.cart .dropdown > div:nth-child(1) span b {
+  margin-right: 10px;
+  text-transform: uppercase;
+}
+.cart .dropdown .item {
+  border-bottom: 1px dotted #fff;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+.cart .dropdown button {
+  background-color: #22ccc7;
+  width: 100%;
+  padding: 5px;
+}
+.cart .dropdown button a {
+  color: #fff;
+}
+.cart .dropdown.active {
+  opacity: 1;
+}
+/*# sourceMappingURL=app.css.map */

@@ -8,6 +8,7 @@
             var vm = this;
             
             vm.addProduct = function (product) {
+                debugger
                 product.inCart = true;
                 cartService.addProduct(product);
                 $rootScope.$broadcast("addProduct");
