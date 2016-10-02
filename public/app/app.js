@@ -1,6 +1,6 @@
 (function () {
 
-    var app = angular.module("app", ["ngComponentRouter","ui.bootstrap","firebase"]);
+    var app = angular.module("app", ["ngComponentRouter","ui.bootstrap","firebase","ui.swiper"]);
 
     app.value("$routerRootComponent", "app");
 
