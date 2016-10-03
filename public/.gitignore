@@ -1,3 +1,4 @@
 node_modules
 .idea
 mailgun.txt
+bower_components
