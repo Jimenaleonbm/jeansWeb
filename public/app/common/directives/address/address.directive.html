@@ -1,0 +1,229 @@
+﻿<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alinear-izq-label padding-none">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-none">
+            <label class="una-linea-texto" style="font-size: 13px">
+                <input type="radio" ng-model="direccion.TipoDireccion" value="Urbana"/>Urbana</label>
+            <label class="una-linea-texto" style="font-size: 13px">
+                <input type="radio" ng-model="direccion.TipoDireccion" value="Rural"/>Rural</label>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-none" class="animate-switch-container" ng-switch
+             on="direccion.TipoDireccion">
+            <div class="animate-switch" ng-switch-when="Rural">
+                <div class="input-group">
+                        <span class="input-group-addon">
+                            <span uib-popover="Dirección válida (Calle 12 # 34 - 56)."
+                                  popover-placement="right" popover-trigger="'mouseenter'"
+                                  class="glyphicon glyphicon-info-sign"></span>
+                        </span>
+                    <input ng-model="direccion.SinFormato"
+                           name="SinFormato"
+                           autocomplete="off"
+                           maxlength="200"
+                           inicia="true"
+                           class="form-control inputFullWidth"
+                           style="padding-left: 0; padding-right: 0; width: 100%">
+                    <span class="input-group-btn">
+                            <a class="btn iconPlusInput"
+                               ng-show="multiple"
+                               ng-click="agregrarDireccion(direccion)">
+                                <span class="glyphicon glyphicon-plus iconTable" style="color: #564e43 !important;">
+                                </span>
+                            </a>
+                        </span>
+                </div>
+            </div>
+            <div class="animate-switch" ng-switch-default>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="col-xs-3 padding-none" width="">
+                            <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <span uib-popover="Dirección válida (Calle 12 # 34 - 56)."
+                                                  popover-placement="right" popover-trigger="'mouseenter'"
+                                                  class="glyphicon glyphicon-info-sign"></span>
+                                        </span>
+                                <input type="text" ng-model="direccion.TipoVia" placeholder="" name="TipoVia"
+                                       inicia="true"
+                                       autocomplete="off"
+                                       data="DireccionTipoVia"
+                                       arreglo="tipoVias"
+                                       uib-typeahead="tipo as tipo.Value for tipo in tipoVias | filter:{Value:$viewValue}"
+                                       typeahead-editable="false"
+                                       class="form-control text-center inputFullWidth"
+                                       typeahead-show-hint="true" typeahead-min-length="0"
+                                       style="padding-left: 0; padding-right: 0; width: 100%">
+                            </div>
+                        </div>
+                        <div class="col-xs-2 padding-none">
+                            <input style="padding-left: 0; padding-right: 0; width: 100%" name="NumVia"
+                                   type="tel"
+                                   numerico
+                                   min="0" max="999"
+                                   autocomplete="off"
+                                   ng-model="direccion.NumVia"
+                                   placeholder=""
+                                   class="form-control text-center"
+                                   ng-maxlength="3"
+                                   maxlength="3"/>
+                        </div>
+                        <div class="col-xs-2 padding-none">
+                            <input type="text"
+                                   ng-model="direccion.LetraVia"
+                                   placeholder=""
+                                   name="LetraVia"
+                                   data="DireccionLetraVia"
+                                   inicia="true"
+                                   autocomplete="off"
+                                   arreglo="letrasVia"
+                                   uib-typeahead="letraVia as letraVia.Value for letraVia in letrasVia | filter:{Value:$viewValue}"
+                                   typeahead-editable="false"
+                                   class="form-control text-center"
+                                   typeahead-show-hint="true"
+                                   typeahead-min-length="0"
+                                   style="padding-left: 0; padding-right: 0; width: 100%">
+                        </div>
+                        <div class="col-xs-2 padding-none">
+                            <input type="text"
+                                   ng-model="direccion.PrefijoCuadrante"
+                                   placeholder=""
+                                   name="PrefijoCudrante"
+                                   data="DireccionCuadrante"
+                                   inicia="true"
+                                   autocomplete="off"
+                                   arreglo="prefijosCuadrante"
+                                   uib-typeahead="prefijoCuadrante as prefijoCuadrante.Value for prefijoCuadrante in prefijosCuadrante | filter:{Value:$viewValue}"
+                                   typeahead-editable="false"
+                                   class="form-control text-center"
+                                   typeahead-show-hint="true"
+                                   typeahead-min-length="0"
+                                   style="padding-left: 0; padding-right: 0; width: 100%">
+                        </div>
+                        <div class="col-xs-1 padding-none text-center">
+                            <small>#</small>
+                        </div>
+                        <div class="col-xs-2 padding-none">
+                            <input style="padding-left: 0; padding-right: 0; width: 100%"
+                                   name="NumViaGeneradora"
+                                   numerico
+                                   type="tel"
+                                   min="0"
+                                   max="999"
+                                   class="form-control text-center"
+                                   ng-model="direccion.NumViaGeneradora"
+                                   placeholder=""
+                                   maxlength="3"/>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="col-xs-2 padding-none">
+                            <input type="text"
+                                   inicia="true"
+                                   autocomplete="off"
+                                   ng-model="direccion.LetraViaGeneradora"
+                                   placeholder=""
+                                   name="LetraViaGeneradora"
+                                   uib-typeahead="letraViaGeneradora as letraViaGeneradora.Value for letraViaGeneradora in letrasVia | filter:{Value:$viewValue}"
+                                   typeahead-editable="false"
+                                   class="form-control text-center"
+                                   typeahead-show-hint="true"
+                                   typeahead-min-length="0"
+                                   style="padding-left: 0; padding-right: 0; width: 100%">
+                        </div>
+                        <div class="col-xs-2 padding-none">
+                            <input type="text"
+                                   ng-model="direccion.PrefijoCuadranteViaGeneradora"
+                                   placeholder=""
+                                   name="PrefijoCuadranteViaGeneradora"
+                                   uib-typeahead="prefijoCuadrante as prefijoCuadrante.Value for prefijoCuadrante in prefijosCuadrante | filter:{Value:$viewValue}"
+                                   typeahead-editable="false"
+                                   class="form-control text-center"
+                                   typeahead-show-hint="true"
+                                   typeahead-min-length="0"
+                                   inicia="true"
+                                   autocomplete="off"
+                                   style="padding-left: 0; padding-right: 0; width: 100%">
+                        </div>
+                        <div class="col-xs-1 padding-none text-center">
+                            <small>-</small>
+                        </div>
+                        <div class="col-xs-2 padding-none text-center">
+                            <input style="padding-left: 0; padding-right: 0; width: 100%"
+                                   min="0" max="999"
+                                   type="tel"
+                                   autocomplete="off"
+                                   inicia="true"
+                                   numerico
+                                   name="NumeroPlaca"
+                                   class="form-control text-center"
+                                   ng-model="direccion.NumeroPlaca"
+                                   placeholder=""
+                                   maxlength="3"/>
+                        </div>
+                        <div class="col-xs-5 padding-none text-center">
+                            <div class="input-group" style="width: 100%">
+                                <input style="padding-left: 0; padding-right: 0; width: 100%"
+                                       name="Complemento"
+                                       autocomplete="off"
+                                       ng-model="direccion.Complemento"
+                                       placeholder=""
+                                       class="form-control text-center"
+                                       maxlength="100"/>
+                                <span class="input-group-btn">
+                                            <a class="btn iconPlusInput"
+                                               ng-show="multiple"
+                                               ng-click="agregrarDireccion(direccion)">
+                                                <span class="glyphicon glyphicon-plus iconTable"
+                                                      style="color: #564e43 !important;"></span>
+                                            </a>
+                                        </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-messages="formulario.$error" role="alert">
+            <div ng-if="formulario.$submitted" ng-messages-include="error-messages"></div>
+        </div>
+    </div>
+    <script type="text/ng-template" id="error-messages">
+        <span class="campo-requerido una-linea-texto" ng-message="direccionValida">Direccion invalida </span>
+        <span class="campo-requerido una-linea-texto" ng-message="direccionRequerida">Dirección requerida</span>
+    </script>
+</div>
+<div class="row listado-direcciones text-left" ng-repeat="dir in modelo" ng-if="multiple">
+    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="margin-top:7px;">
+        <span ng-if="dir.TipoDireccion === 'Urbana'">
+            {{dir.TipoVia.Descripcion}}
+            {{dir.TipoVia.Value}}
+            {{dir.NumVia}}
+            {{dir.LetraVia.Descripcion}}
+            {{dir.LetraVia.Value}}
+            {{dir.PrefijoCuadrante.Descripcion}}
+            {{dir.PrefijoCuadrante.Value}} #
+            {{dir.NumViaGeneradora}}
+            {{dir.LetraViaGeneradora.Descripcion}}
+            {{dir.LetraViaGeneradora.Value}}
+            {{dir.PrefijoCuadranteViaGeneradora.Descripcion}}
+            {{dir.PrefijoCuadranteViaGeneradora.Value}} -
+            {{dir.NumeroPlaca}}
+            {{dir.Complemento}}
+            {{dir.SinFormato}}
+        </span>
+        <span ng-if="dir.TipoDireccion === 'Rural'">
+            {{dir.SinFormato}}
+        </span>
+    </div>
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-right">
+        <a ng-click="editarDireccion(dir)" class="btn" style="padding:3px;">
+            <span class="glyphicon glyphicon-pencil iconTable"></span>
+        </a>
+        <a ng-click="eliminarDireccion(dir)" class="btn" style="padding:3px;">
+            <span class="glyphicon glyphicon-minus iconTable"></span>
+        </a>
+    </div>
+</div>
+
+
+
+

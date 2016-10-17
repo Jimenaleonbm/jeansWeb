@@ -1,0 +1,18 @@
+[
+  {"Guid":"1","Value":"A","Type":"DireccionLetraVia"},
+  {"Guid":"2","Value":"B","Type":"DireccionLetraVia"},
+  {"Guid":"3","Value":"C","Type":"DireccionLetraVia"},
+  {"Guid":"4","Value":"D","Type":"DireccionLetraVia"},
+  {"Guid":"5","Value":"E","Type":"DireccionLetraVia"},
+  {"Guid":"6","Value":"Avenida","Type":"DireccionTipoVia"},
+  {"Guid":"7","Value":"Calle","Type":"DireccionTipoVia"},
+  {"Guid":"8","Value":"Carrera","Type":"DireccionTipoVia"},
+  {"Guid":"9","Value":"Transversal","Type":"DireccionTipoVia"},
+  {"Guid":"10","Value":"Avenida calle","Type":"DireccionTipoVia"},
+  {"Guid":"11","Value":"Autopista","Type":"DireccionTipoVia"},
+  {"Guid":"12","Value":"Sur","Type":"DireccionCuadrante"},
+  {"Guid":"13","Value":"Norte","Type":"DireccionCuadrante"},
+  {"Guid":"14","Value":"Oriente","Type":"DireccionCuadrante"},
+  {"Guid":"15","Value":"Occidente","Type":"DireccionCuadrante"}
+
+]

@@ -1,37 +1,74 @@
 <div class="container">
 
-    <div class="panel panel-primary">
-        <ul class="list-unstyled panel-body" ng-repeat="product in vm.products">
-            <li><img ng-src="{{product.image}}" width="8%" height="15%"> {{product.name}} -- {{product.quantity}}</li>
-        </ul>
-    </div>
+    <!--<div class="panel panel-primary">-->
+    <!--<ul class="list-unstyled panel-body" ng-repeat="product in vm.products">-->
+    <!--<li><img ng-src="{{product.image}}" width="8%" height="15%"> {{product.name}} &#45;&#45; {{product.quantity}}</li>-->
+    <!--</ul>-->
+    <!--</div>-->
 
 
-    <form ng-submit="vm.sendEmail(vm.user)">
+    <form ng-submit="vm.sendEmailll(vm.user)" name="formcheckout">
+
+        <br>
+        <br>
         <div class="form-group">
-            <label for="Email">Email</label>
-            <input type="email" class="form-control" required ng-model="vm.user.to_name" id="Email" placeholder="Email">
+            <label>Input arreglo</label>
+            <input ng-model="vm.valor" class="form-control" name="valor" arreglo-requerido="vm.arreglo"/>
+            <button agregar-elemento="vm.valor" arreglo="vm.arreglo" class="btn btn-xs" type="button">Agregar</button>
+            <div ng-messages="formcheckout.valor.$error" role="alert">
+                <div ng-messages-include="error-messages"></div>
+            </div>
         </div>
+
+        <div class="panel">
+            <span ng-repeat="va in vm.arreglo">{{va}}<button eliminar-elemento="va" arreglo="vm.arreglo" type="button"><span
+                    class="glyphicon glyphicon-remove"></span></button></span>
+        </div>
+
+
         <div class="form-group">
-            <label for="Nombres">Nombres</label>
-            <input type="text" class="form-control" required ng-model="vm.user.nombres" id="Nombres" placeholder="Nombres">
+        <label for="">Direccion</label>
+        <direccion ng-model="vm.direccion" name="direccion" id="direccion" multiple="true" required ></direccion>
         </div>
-        <div class="form-group">
-            <label for="Apellidos">Apellidos</label>
-            <input type="text" id="Apellidos" required class="form-control" ng-model="vm.user.apellidos" placeholder="Apellidos">
-        </div>
-        <div class="form-group">
-            <label for="Pais">Pais</label>
-            <input type="text" id="Pais" class="form-control" placeholder="Pais">
-        </div>
-        <div class="form-group">
-            <label for="Ciudad">Ciudad</label>
-            <input type="text" id="Ciudad" class="form-control" placeholder="Ciudad">
-        </div>
-        <div class="form-group">
-            <label for="Direccion">Dirección</label>
-            <input type="text" id="Direccion" required ng-model="vm.user.direccion" class="form-control" placeholder="Direccion">
-        </div>
+
+        <!--<div class="form-group">-->
+        <!--<label for="">Direccion</label>-->
+        <!--<direccion ng-model="vm.direcciondos" name="direcciondos" id="direcciondos" required ></direccion>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+        <!--<label for="Email">Email</label>-->
+        <!--<input type="email" class="form-control" required ng-model="vm.user.to_name" id="Email" placeholder="Email">-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+        <!--<label for="Nombres">Nombres</label>-->
+        <!--<input type="text" class="form-control" required ng-model="vm.user.nombres" id="Nombres" placeholder="Nombres">-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+        <!--<label for="Apellidos">Apellidos</label>-->
+        <!--<input type="text" id="Apellidos" required class="form-control" ng-model="vm.user.apellidos" placeholder="Apellidos">-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+        <!--<label for="Pais">Pais</label>-->
+        <!--<input type="text" id="Pais" class="form-control" placeholder="Pais">-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+        <!--<label for="Ciudad">Ciudad</label>-->
+        <!--<input type="text" id="Ciudad" class="form-control" placeholder="Ciudad">-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+        <!--<label for="Direccion">Dirección</label>-->
+        <!--<input type="text" id="Direccion" required ng-model="vm.user.direccion" class="form-control" placeholder="Direccion">-->
+        <!--</div>-->
         <button type="submit" class="btn btn-default">Enviar</button>
+        {{checkout.$valid}}
+
+        <pre>
+            {{checkout | json}}
+        </pre>
     </form>
+    <script type="text/ng-template" id="error-messages">
+        <div ng-message="required">Este campo es requerido</div>
+        <div ng-message="minlength">Este campo es demasiado corto</div>
+        <div ng-message="arregloRequerido">Debe agregar un elemento</div>
+    </script>
 </div>

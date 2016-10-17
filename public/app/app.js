@@ -1,8 +1,18 @@
 (function () {
 
-    var app = angular.module("app", ["ngComponentRouter","ui.bootstrap","firebase","ui.swiper"]);
+    var app = angular.module("app", [
+        "ngComponentRouter",
+        "ngMessages",
+        "ngAnimate",
+        "ui.bootstrap",
+        "firebase",
+        "ui.swiper"]);
 
     app.value("$routerRootComponent", "app");
+
+    app.config(function($locationProvider) {
+        $locationProvider.html5Mode(true);
+    })
 
     app.run(["$routerRootComponent","$rootScope","$location",function ($routerRootComponent,$rootScope,$location) {
 

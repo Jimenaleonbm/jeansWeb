@@ -1,14 +1,20 @@
 [debug] ----------------------------------------------------------------------
-[debug] Command:      /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] Command:      /usr/local/bin/node /usr/local/bin/firebase deploy
 [debug] CLI Version:  3.0.7
 [debug] Platform:     darwin
 [debug] Node Version: v4.1.1
-[debug] Time:         Sun Oct 02 2016 16:09:49 GMT-0500 (COT)
+[debug] Time:         Mon Oct 17 2016 12:56:38 GMT-0500 (COT)
 [debug] ----------------------------------------------------------------------
 [debug] 
-[info] Starting Firebase development server...
+[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/jeansweb-53bc2 
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/jeansweb-53bc2/tokens 
+[debug] <<< HTTP RESPONSE 200
 [info] 
-[info] Project Directory: /Users/jeisonlopez/WebstormProjects/jeansWeb
-[info] Public Directory: public
+[info] === Deploying to 'jeansweb-53bc2'...
 [info] 
-[info] Server listening at: http://localhost:5000
+[info] i  deploying database, hosting
+[info] ✔  database: rules ready to deploy.
+[info] i  hosting: preparing public directory for upload...
+[debug] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/jeansweb-53bc2/uploads/-KUImS02gWe4wn7G53Pf?fileCount=15323&message= 

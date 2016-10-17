@@ -1,32 +1,63 @@
 <!DOCTYPE html>
 <html lang="es" ng-app="app">
 <head>
-    <title>JeansCo</title>
+    <title>Jeans </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
+    <meta name="description" content="ventas en Colombia de jeans. Exportador de Jeans al por mayor en Colombia">
+    <meta name="keywords"
+          content="jeans en bogota, jeans al por mayor en bogota, jeans colombianos, jeans bogota para negocio, jeans bogota hombre, jeans mujer por mayor">
     <link type="text/css" rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="bower_components/angular-ui-swiper/dist/angular-ui-swiper.css"/>
     <link rel="stylesheet" type="text/css" href="app.css">
     <link rel="stylesheet" type="text/css" href="node_modules/font-awesome/css/font-awesome.css">
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script type="text/javascript">
-        (function(){
+        (function () {
             emailjs.init("user_SdOPGyUxQITLpFDJPKs5L");
         })();
     </script>
+    <!-- analytics -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-85418385-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <!-- end analytics -->
+
 </head>
 <body>
+
 
 <app></app>
 <script src="node_modules/angular/angular.js"></script>
 <script src="node_modules/@angular/router/angular1/angular_1_router.js"></script>
 <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+<script src="node_modules/angular-animate/angular-animate.min.js"></script>
+<script src="node_modules/angular-messages/angular-messages.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
 <script src="node_modules/angularfire/dist/angularfire.js"></script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="bower_components/angular-ui-swiper/dist/angular-ui-swiper.js"></script>
 <script src="app/config.js"></script>
 <script src="app/app.js"></script>
+<script src="app/common/directives/address/address.directive.js"></script>
+<script src="app/common/directives/data/data.directive.js"></script>
+<script src="app/common/services/data.service.js"></script>
+<script src="app/common/directives/validate-inputs/validate.inputs.js"></script>
 <script src="app/home/home.js"></script>
 <script src="app/cart/cart.js"></script>
 <script src="app/cart/cart.service.js"></script>

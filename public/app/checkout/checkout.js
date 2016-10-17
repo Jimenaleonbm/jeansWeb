@@ -6,6 +6,7 @@
         controller: ["cartService", "$scope", "$http", function (cartService, $scope, $http) {
 
             var vm = this;
+            vm.arreglo = [];
             vm.products = cartService.getProductsPurchase();
 
             vm.sendEmail = function (user) {
@@ -19,7 +20,8 @@
                     }, function (err) {
                         console.log("FAILED. error=", err);
                     });
-            }
+            };
+
         }]
     })
 
