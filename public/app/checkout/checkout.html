@@ -13,9 +13,12 @@
         <br>
         <div class="form-group">
             <label>Input arreglo</label>
-            <input ng-model="vm.valor" class="form-control" name="valor" arreglo-requerido="vm.arreglo"/>
+            <input ng-model="vm.valor" class="form-control" name="valor" />
+
+            <div ng-model="vm.midiv" arreglo-requerido="vm.arreglo" name="midiv"></div>
+
             <button agregar-elemento="vm.valor" arreglo="vm.arreglo" class="btn btn-xs" type="button">Agregar</button>
-            <div ng-messages="formcheckout.valor.$error" role="alert">
+            <div ng-messages="formcheckout.midiv.$error" role="alert">
                 <div ng-messages-include="error-messages"></div>
             </div>
         </div>
@@ -60,10 +63,10 @@
         <!--<input type="text" id="Direccion" required ng-model="vm.user.direccion" class="form-control" placeholder="Direccion">-->
         <!--</div>-->
         <button type="submit" class="btn btn-default">Enviar</button>
-        {{checkout.$valid}}
+        {{formcheckout.$valid}}
 
         <pre>
-            {{checkout | json}}
+            {{formcheckout | json}}
         </pre>
     </form>
     <script type="text/ng-template" id="error-messages">
