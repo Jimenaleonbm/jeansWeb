@@ -1,5 +1,46 @@
-<div class="container">
+<div class="container purchase">
     <br>
+    <h2>Mi carrito</h2>
+
+    <div class="contentPedido">
+        <div class="pedido" ng-repeat="product in vm.productsPurchase">
+            <div class="img">
+                 <img ng-src="{{product.image}}"> 
+            </div>
+            <div class="info">
+                <h3>{{product.name}}</h3>
+                <p>Tallas<i class="fa fa-arrow-down" aria-hidden="true"></i></p>
+                <table class="table">
+                    <tr>
+                        <th ng-repeat="size in product.sizes">
+                            {{size.size}}
+                        </th>
+                    </tr>
+                    <tr>
+                        <td ng-repeat="size in product.sizes">
+                            <a ng-click="vm.removeQuantitySize(product,size)" style="color:red"><i class="fa fa-minus-circle"></i></a>
+                            &nbsp;
+                            {{size.quantity}}
+                            &nbsp;<a ng-click="vm.addQuantitySize(product,size)"><i class="fa fa-plus-circle"></i></a>
+                        </td>
+                    </tr>
+                </table>
+                <div class="totalPedido">
+                    <span>Unidad: <b>  {{product.price | currency}}</b></span>
+                    <span>Total: <b> {{product.totalPrice | currency}}</b></span>
+                </div>
+            </div>
+        </div>
+        <div class="totalCompra">
+             <div> Total: <span>10.000.000</span></div>
+
+        <a class="btn btn-info" ng-link="['Home']">Seguir comprando</a>
+        <a class="btn btn-success" ng-link="['Checkout']">Finalizar pedido</a>
+        </div>
+    </div>
+
+
+<!--
     <table class="table table-bordered track by id">
         <tr>
             <th></th>
@@ -37,8 +78,9 @@
             </td>
         </tr>
     </table>
+    <div> Total: <span>10.000.000</span></div>
 
     <a class="btn btn-info" ng-link="['Home']">Seguir comprando</a>
-    <a class="btn btn-danger" ng-click="vm.deletePurchase()">Eliminar pedido</a>
-    <a class="btn btn-success" ng-link="['Checkout']">Finalizar pedido</a>
+  <a class="btn btn-danger" ng-click="vm.deletePurchase()">Eliminar pedido</a>
+    <a class="btn btn-success" ng-link="['Checkout']">Finalizar pedido</a>-->
 </div>
