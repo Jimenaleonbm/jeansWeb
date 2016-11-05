@@ -184,9 +184,6 @@ footer img {
   font-family: bebas;
   font-size: 2em;
 }
-#home .img-mobil {
-  display: none;
-}
 #home .swiper-slide img {
   width: 100%;
 }
@@ -219,15 +216,6 @@ footer img {
 }
 #home .swiper-slide .infoSlide a:hover {
   text-decoration: none;
-}
-/*only mobiles*/
-@media (max-width: 768px) {
-  #home .swiper-container {
-    display: none;
-  }
-  #home .img-mobil {
-    display: block;
-  }
 }
 #nosotros article {
   width: 100%;
