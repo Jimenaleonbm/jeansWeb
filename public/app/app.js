@@ -5,8 +5,7 @@
         "ngMessages",
         "ngAnimate",
         "ui.bootstrap",
-        "firebase",
-        "ui.swiper"]);
+        "firebase"]);
 
     app.value("$routerRootComponent", "app");
 
